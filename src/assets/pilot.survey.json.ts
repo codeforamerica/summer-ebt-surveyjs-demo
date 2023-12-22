@@ -1,119 +1,113 @@
 export const surveyJson = {
-    "title": "MDTHINK Pilot",
+    "title": "Summer EBT Demo",
     "logoPosition": "right",
     "pages": [
      {
-      "name": "benefitsSelectionPage",
-      "elements": [
-       {
-        "type": "checkbox",
-        "name": "benefitsSelection",
-        "title": "Select benefits to apply for",
-        "hideNumber": true,
-        "choices": [
-         {
-          "value": "SNAP",
-          "text": "Get help with food"
-         },
-         {
-          "value": "TCA",
-          "text": "Get help with children and childcare"
-         },
-         {
-          "value": "TDAP",
-          "text": "Get help for a disability"
-         },
-         {
-          "value": "OHEP",
-          "text": "Get help with rent or utilities"
-         }
-        ],
-        "minSelectedChoices": 1
-       }
-      ],
-      "title": {
-       "default": "Benefits Selection",
-       "es": "Selección de Beneficios",
-       "vi": "lựa chọn lợi ích"
-      }
-     },
-     {
-      "name": "benefitsConfirmationPage",
+      "name": "page1",
       "elements": [
        {
         "type": "html",
-        "name": "benefitsConfirmationHeader",
-        "html": "<p><b>Based on your last answer, here are some benefits you could try to get</p>\n\n<p><b>Please check all the programs you would like to apply for</b></p>"
+        "name": "question4",
+        "html": "This application should be filled out by a parent or guardian. It will take less than <b>10 minutes</b> to complete."
        },
        {
-        "type": "checkbox",
-        "name": "benefitsConfirmation",
-        "titleLocation": "hidden",
-        "choices": [
+        "type": "panel",
+        "name": "panel1",
+        "elements": [
          {
-          "value": "SNAP",
-          "text": "**Help with food**<br>**Supplemental Nutrition Assistance Program (SNAP)**<br>Helps people pay for groceries. Used to be known as food stamps. You get money added to an EBT card and can use it for food.<br>How much you can get depends on the number of people in your household and how much money you make.",
-          "visibleIf": "{benefitsSelection} anyof ['SNAP']"
-         },
-         {
-          "value": "TCA",
-          "text": "**Help with children and childcare**<br>**Temporary Cash Assistance (TCA)**<br>Gives cash and helps to pay for childcare or things you need to go to work. It’s for individuals and families with children.<br>Getting benefits depends on you or your family member’s age, income, or pregnancy status.<br>This is Maryland’s version of the federal program Temporary Assistance to Needy Family’s (TANF)",
-          "visibleIf": "{benefitsSelection} anyof ['TANF']"
-         },
-         {
-          "value": "TDAP",
-          "text": "**Help for a disability**<br>**Temporary Disability Assistance Program (TDAP)**<br>Gives cash to people who are low-income and living with short-term disability or who are waiting for federal disability help. People with children who are dependents cannot get this benefit.",
-          "visibleIf": "{benefitsSelection} anyof ['TDAP']"
-         },
-         {
-          "value": "OHEP",
-          "text": "**Help with rent or utilities**<br>**Office of Home Energy Programs (OHEP)**<br>Helps with heating, electric and gas bills. Maryland will pay the company that sends you bills directly. How much they pay depends on the number of people in your household and how much money you and your household make.",
-          "visibleIf": "{benefitsSelection} anyof ['OHEP']"
-         },
-         {
-          "value": "Other",
-          "text": "**I want to add another program not shown here**<br>If you believe there are other benefits you can get or a caseworker at an office believes you can get benefits from another program, choose this option."
+          "type": "html",
+          "name": "question1",
+          "html": "<ul>\n<li>Your personal information</li>\n<li>Your children's information</li>\n<li>Your family's income</li>\n</ul>"
          }
         ],
-        "choicesVisibleIf": "{benefitsSelection} anyof ['SNAP']"
-       }
-      ],
-      "title": "Benefits Confirmation"
-     },
-     {
-      "name": "snapStartPage",
-      "elements": [
+        "title": "We will ask you about",
+        "state": "collapsed"
+       },
+       {
+        "type": "panel",
+        "name": "panel2",
+        "elements": [
+         {
+          "type": "html",
+          "name": "question2",
+          "html": "<p>At the end of this application, you will be asked to add documents that verify your identity and date of birth, proof of US residence, and total household income. For household income, you will need to submit documentation for any income earning adult in your household.</p>\n<p>You can use your phone to take photos of paper documents or select a file from your device.</p>\n<p>You can always return to our homepage to add documents later, too.</p>"
+         }
+        ],
+        "title": "Adding documents",
+        "state": "collapsed"
+       },
        {
         "type": "html",
-        "name": "snapStartContent",
-        "visibleIf": "{benefitsConfirmation} allof ['SNAP']",
-        "html": "<p><b>We see you want to apply to SNAP, we wanted to let you know we will check to see \n if you can get food benefits \n in 7 days or less when you submit your application.</p>\n<p><b>This is called expedited SNAP.  Curious? Learn more here.</b></p>"
+        "name": "question3",
+        "html": "<div>\n            <i class=\"icon-lock_outline\"></i>\n            <span>Your information is secure and will be handled in accordance with our <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://sebt.codeforamerica.app/privacy\">privacy policy</a>.</span>\n          </div>"
        }
-      ]
+      ],
+      "title": "How this works"
      },
      {
       "name": "pageHouseholdStart",
       "elements": [
        {
-        "type": "html",
-        "name": "householdStartContent",
-        "html": "<b>Let’s get to know you and build\nyour household</b>"
+        "type": "dropdown",
+        "name": "question5",
+        "title": "What language do you prefer to read or write?",
+        "description": "We will use this language when texting or emailing you.",
+        "hideNumber": true,
+        "defaultValue": "en",
+        "choices": [
+         {
+          "value": "en",
+          "text": "English"
+         },
+         {
+          "value": "es",
+          "text": "Español"
+         }
+        ]
+       },
+       {
+        "type": "dropdown",
+        "name": "question6",
+        "title": "What language do you prefer to speak?",
+        "hideNumber": true,
+        "defaultValue": "Item 1",
+        "choices": [
+         {
+          "value": "Item 1",
+          "text": "English"
+         },
+         {
+          "value": "Item 2",
+          "text": "Español"
+         }
+        ]
+       },
+       {
+        "type": "boolean",
+        "name": "question7",
+        "title": "Do you need an interpreter?",
+        "hideNumber": true
        }
-      ]
+      ],
+      "title": "Language Preference"
      },
      {
       "name": "selfApplyPage",
       "elements": [
        {
-        "type": "boolean",
-        "name": "selfApply",
-        "title": "Is someone helping you fill out this application or are you doing it yourself?",
-        "hideNumber": true,
-        "isRequired": true,
-        "labelTrue": "Yes, someone is helping me",
-        "labelFalse": "No, I'm doing it myself"
+        "type": "panel",
+        "name": "panel3",
+        "elements": [
+         {
+          "type": "html",
+          "name": "question8",
+          "html": "<ol type=\"1\">\n  <li>Basic info</li>\n  <li>Contact info</li>\n  <li>Living situation</li>\n</ol>"
+         }
+        ],
+        "title": "We'll ask about"
        }
-      ]
+      ],
+      "title": "Getting to know you"
      },
      {
       "name": "applicantInfo",
@@ -121,59 +115,163 @@ export const surveyJson = {
        {
         "type": "text",
         "name": "firstName",
-        "title": "What is your first name?",
-        "hideNumber": true
-       },
-       {
-        "type": "text",
-        "name": "middleName",
-        "title": "What is your middle name?",
-        "hideNumber": true
+        "title": "What's your first name?",
+        "description": "Legally as it appears on your ID",
+        "hideNumber": true,
+        "isRequired": true,
+        "requiredErrorText": "Make sure to provide a first name."
        },
        {
         "type": "text",
         "name": "lastName",
-        "title": "What is your last name?",
-        "hideNumber": true
-       },
-       {
-        "type": "text",
-        "name": "birthDate",
-        "title": "When were you born?",
-        "inputType": "date"
-       },
-       {
-        "type": "dropdown",
-        "name": "sex",
-        "title": "What is your sex?",
-        "choices": [
-         "male",
-         "female",
-         "other"
-        ]
-       },
-       {
-        "type": "text",
-        "name": "ssn",
-        "title": "What is your social security number (SSN)?"
-       },
-       {
-        "type": "dropdown",
-        "name": "maritalStatus",
-        "title": "What is your marital status?",
-        "choices": [
-         "single",
-         "married",
-         "divorced"
-        ]
-       },
-       {
-        "type": "boolean",
-        "name": "veteran",
-        "title": "Are you a veteran?"
+        "title": "What's your last name?",
+        "hideNumber": true,
+        "isRequired": true,
+        "requiredErrorText": "Make sure to provide a last name."
        }
-      ]
+      ],
+      "title": "Tell us about yourself"
+     },
+     {
+      "name": "page2",
+      "elements": [
+       {
+        "type": "text",
+        "name": "question9",
+        "title": "Street address",
+        "hideNumber": true,
+        "isRequired": true,
+        "requiredErrorText": "must not be blank",
+        "autocomplete": "address-line1"
+       },
+       {
+        "type": "text",
+        "name": "question10",
+        "title": "Street address line 2",
+        "hideNumber": true,
+        "requiredErrorText": "must not be blank",
+        "autocomplete": "address-line2"
+       },
+       {
+        "type": "text",
+        "name": "question11",
+        "title": "City",
+        "hideNumber": true,
+        "isRequired": true,
+        "requiredErrorText": "must not be blank",
+        "autocomplete": "address-line2"
+       },
+       {
+        "type": "dropdown",
+        "name": "question12",
+        "title": "State",
+        "hideNumber": true,
+        "isRequired": true,
+        "requiredErrorText": "must not be blank",
+        "choices": [
+         {
+          "value": "Item 1",
+          "text": "Alabama - AL"
+         },
+         {
+          "value": "Item 2",
+          "text": "Alaska - AK"
+         },
+         {
+          "value": "Item 3",
+          "text": "Arizona - AZ"
+         },
+         {
+          "value": "Item 4",
+          "text": "Arkansas - AR"
+         },
+         {
+          "value": "Item 5",
+          "text": "California - CA"
+         },
+         {
+          "value": "Item 6",
+          "text": "Colorado - CO"
+         },
+         {
+          "value": "Item 7",
+          "text": "Connecticut - CT"
+         }
+        ]
+       },
+       {
+        "type": "text",
+        "name": "question13",
+        "title": "ZIP Code",
+        "hideNumber": true,
+        "isRequired": true,
+        "requiredErrorText": "must not be blank",
+        "autocomplete": "postal-code"
+       }
+      ],
+      "title": "Where are you currently living?"
+     },
+     {
+      "name": "page3",
+      "elements": [
+       {
+        "type": "text",
+        "name": "question14",
+        "title": "What's your phone number?",
+        "description": "A caseworker may use this number to contact you directly. If you don't add a phone number, service may be slower.",
+        "hideNumber": true,
+        "requiredIf": "{reminderContactMethod} allof ['text']",
+        "requiredErrorText": "You indicated you would like to be contacted by phone. Please make sure to provide a phone number.",
+        "validators": [
+         {
+          "type": "regex",
+          "text": "Please make sure you are entering a valid 10-digit phone number, area code first.",
+          "regex": "^(\\+\\d{1,2}\\s)?\\(?\\d{3}\\)?[\\s.-]\\d{3}[\\s.-]\\d{4}$"
+         }
+        ]
+       },
+       {
+        "type": "text",
+        "name": "question15",
+        "title": "What's your email address?",
+        "hideNumber": true,
+        "requiredIf": "{reminderContactMethod} allof ['email']",
+        "requiredErrorText": "You indicated you would like to be contacted by email. Please make sure to provide an email address.",
+        "validators": [
+         {
+          "type": "email",
+          "text": "Please make sure you are entering a valid email address."
+         }
+        ]
+       },
+       {
+        "type": "checkbox",
+        "name": "reminderContactMethod",
+        "title": "How can we send you updates and reminders about your application in the future?",
+        "isRequired": true,
+        "requiredErrorText": "In order for us to reach out to you with more information about your application, please select at least one contact method.",
+        "choices": [
+         {
+          "value": "text",
+          "text": "It's okay to text me"
+         },
+         {
+          "value": "email",
+          "text": "It's okay to email me"
+         }
+        ]
+       },
+       {
+        "type": "html",
+        "name": "question17",
+        "html": "We may send you text and/or email message to communicate with you about your application. We will only text and/or email if a box is checked above. You will be responsible for any message or data charges from your service provider associated with text messaging. You may opt out of and stop receiving text messages at any time by replying with \"STOP\" to a text message, or following the unsubscribe link on the email message."
+       }
+      ],
+      "title": "How can we send you updates and reminders about your application in the future?"
      }
     ],
-    "showTitle": false
+    "showTitle": false,
+    "pagePrevText": "Back",
+    "pageNextText": "Continue",
+    "showPreviewBeforeComplete": "showAnsweredQuestions"
    }
