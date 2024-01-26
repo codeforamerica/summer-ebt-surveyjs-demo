@@ -4,7 +4,7 @@ import Inputmask from "inputmask";
 import { inputmask } from "surveyjs-widgets";
 import { SurveyModule } from "survey-angular-ui";
 import { IDocOptions, SurveyPDF } from "survey-pdf";
-import { surveyJson } from '../../../assets/temp.json';
+import { surveyJson } from '../../../assets/pilot.survey.json';
 import { themeJson } from '../../../assets/pilot.theme.json';
 import "./survey.component.css";
 import "survey-core/defaultV2.min.css";
