@@ -245,6 +245,8 @@ export const surveyJson = {
         "name": "reminderPhoneNumber",
         "title": "What's your phone number?",
         "description": "A caseworker may use this number to contact you directly. If you don't add a phone number, service may be slower.",
+        "inputMask": "phone",
+        "inputFormat": "999-999-9999",
         "hideNumber": true,
         "requiredIf": "{reminderContactMethod} allof ['text']",
         "requiredErrorText": "You indicated you would like to be contacted by phone. Please make sure to provide a phone number.",
@@ -439,6 +441,7 @@ export const surveyJson = {
             "name": "yearlyAmount",
             "title": "Yearly Amount",
             "cellType": "text",
+            "inputMask": "currency",
             "enableIf": "{row.hasIncome} = true"
            }
           ],

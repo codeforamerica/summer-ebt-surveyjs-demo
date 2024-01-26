@@ -1,8 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { Model, ITheme } from 'survey-core';
+import * as SurveyCore from 'survey-core';
+import Inputmask from "inputmask";
+import { inputmask } from "surveyjs-widgets";
 import { SurveyModule } from "survey-angular-ui";
 import { IDocOptions, SurveyPDF } from "survey-pdf";
-import { surveyJson } from '../../../assets/pilot.survey.json';
+import { surveyJson } from '../../../assets/temp.json';
 import { themeJson } from '../../../assets/pilot.theme.json';
 import "./survey.component.css";
 import "survey-core/defaultV2.min.css";
@@ -10,6 +12,7 @@ import { Converter } from "showdown";
 import { HeaderComponent } from '../header/header.component';
 import "survey-core/survey.i18n";
 
+inputmask(SurveyCore);
 
 const pdfDocOptions: IDocOptions = { /* ... */ };
 
@@ -39,7 +42,7 @@ export class SurveyComponent  {
 
   @Input() locale!: string;
 
-  surveyModel!: Model;
+  surveyModel!: SurveyCore.Model;
 
   savePdf (sender: any, options: any ) {
     console.log('savePdf start');
@@ -66,12 +69,12 @@ export class SurveyComponent  {
   };
 
   ngOnInit() {
-    const survey = new Model(surveyJson);
+    const survey = new SurveyCore.Model(surveyJson);
 
     //set the markdown renderer
     survey.onTextMarkdown.add(doMarkdown);
 
-    const theme: ITheme = themeJson as ITheme;
+    const theme: SurveyCore.ITheme = themeJson as SurveyCore.ITheme;
     survey.applyTheme(theme);
 
     survey.onComplete.add(this.savePdf);
