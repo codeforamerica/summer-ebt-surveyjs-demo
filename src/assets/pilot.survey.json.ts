@@ -535,5 +535,5 @@ export const surveyJson = {
     "questionErrorLocation": "bottom",
     "pagePrevText": "Back",
     "pageNextText": "Continue",
-    "showPreviewBeforeComplete": "showAnsweredQuestions"
+    "clearInvisibleValues": "none"
    }

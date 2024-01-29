@@ -45,7 +45,7 @@ export class SurveyComponent  {
   surveyModel!: SurveyCore.Model;
 
   savePdf (sender: any, options: any ) {
-    console.log('savePdf start');
+    console.log(sender.data);
 
     const surveyPdf = new SurveyPDF(surveyJson, pdfDocOptions);
     surveyPdf.mode = "display"; //read-only
