@@ -42,7 +42,10 @@ export const surveyJson = {
         "html": "<div>\n<i class=\"icon-lock_outline\"></i>\n<span>Your information is secure and will be handled in accordance with our <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://sebt.codeforamerica.app/privacy\">privacy policy</a>.</span>\n</div>"
        }
       ],
-      "title": "How this works"
+      "title": {
+        "default": "How this works",
+        "es": "¿Cómo funciona esto?"
+      }
      },
      {
       "name": "languagePage",
