@@ -159,6 +159,7 @@ export const surveyJson = {
           templateVisibleIf: '{panelIndex} = 0',
         },
       ],
+
       title: 'Tell us about yourself',
     },
     {
@@ -237,6 +238,7 @@ export const surveyJson = {
           requiredErrorText: 'must not be blank',
           autocomplete: 'postal-code',
         },
+
       ],
       title: 'Where are you currently living?',
     },
@@ -537,6 +539,7 @@ export const surveyJson = {
               ],
             },
           ],
+
           templateTitle: '{panel.fullName}',
           allowAddPanel: false,
           allowRemovePanel: false,
@@ -553,3 +556,4 @@ export const surveyJson = {
   pageNextText: 'Continue',
   showPreviewBeforeComplete: 'showAnsweredQuestions',
 };
+

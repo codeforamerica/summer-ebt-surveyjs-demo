@@ -33,9 +33,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## TODO
 
 1. Markdown (DONE)
-1. PDF Output (DONE)
+1. PDF Output using SurveyJS PDF Generator (DONE)
 1. Multi language support (DONE)
+1. Input masking (DONE)
 1. Document upload to S3
 1. Address validation
-1. Honeycrisp/USWDS styling
-1. Server side rendering (may not be spring boot compatible)
+1. USWDS styling
+1. Add multi language content
+1. Accessibility testing
+1. Server side rendering (requires back end server - assumes node.js)
