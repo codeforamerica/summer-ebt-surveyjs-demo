@@ -4,15 +4,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
   selector: 'app-header',
   standalone: true,
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css'], // Corrected property name
 })
 export class HeaderComponent {
-
   @Output() localeChanged = new EventEmitter<string>();
 
- changeLocale(locale: string) {
-  //console.log(locale);
-  this.localeChanged.emit(locale);
- }
-
+  changeLocale(locale: string): void {
+    this.localeChanged.emit(locale);
+  }
 }

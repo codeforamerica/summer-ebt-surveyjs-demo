@@ -1,6 +1,19 @@
 <div class="header">
-  <img class="logo" src="/assets/images/code-for-america-logo_white.svg" height="25"  alt="CfA logo" >
-  <a href="javascript:void(0)" class="button" (click)="changeLocale('en')">English</a>
-  <a href="javascript:void(0)" class="button" (click)="changeLocale('es')">Español</a>
+  <img
+    class="logo"
+    src="/assets/images/code-for-america-logo_white.svg"
+    height="25"
+    alt="CfA logo"
+  />
+
+  <!-- Dropdown button for language selection -->
+  <div class="dropdown">
+    <button class="dropbtn">Translate <i class="fa fa-caret-down"></i></button>
+    <div class="dropdown-content">
+      <a href="javascript:void(0)" onclick="changeLocale('en')">English</a>
+      <a href="javascript:void(0)" onclick="changeLocale('es')">Español</a>
+      <a href="javascript:void(0)" onclick="changeLocale('vi')">Tiếng Việt</a>
+    </div>
+  </div>
 </div>
 <div class="example">This site is for example purposes only</div>

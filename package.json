@@ -23,6 +23,7 @@
     "mailgun.js": "^9.3.0",
     "rxjs": "~7.8.0",
     "showdown": "^2.1.0",
+    "survey-angular": "^1.9.127",
     "survey-angular-ui": "latest",
     "survey-pdf": "latest",
     "surveyjs-widgets": "latest",

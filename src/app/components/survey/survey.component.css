@@ -1,0 +1,8 @@
+.sd-page__title {
+  color: #000;
+  margin-bottom: 10px;
+  text-align: left;
+}
+.active-panel {
+  border: 2px solid #ff7f00;
+}

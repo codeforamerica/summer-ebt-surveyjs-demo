@@ -1,2 +1,9 @@
 <app-header (localeChanged)="changeLocale($event)"></app-header>
-<app-survey [locale]="locale" ></app-survey>
+<app-survey [locale]="locale"
+  ><input
+    type="button"
+    class="sd-btn sd-navigation__next-btn"
+    value="Continue"
+    title="Continue"
+/></app-survey>
+<app-footer></app-footer>
