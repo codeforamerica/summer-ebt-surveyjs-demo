@@ -3,49 +3,14 @@ export const surveyJson = {
     "logoPosition": "right",
     "pages": [
      {
-      "name": "startPage",
+      "name": "applicationStepsPage",
       "elements": [
        {
         "type": "html",
-        "name": "question4",
-        "html": "This application should be filled out by a parent or guardian. It will take less than <b>10 minutes</b> to complete."
-       },
-       {
-        "type": "panel",
-        "name": "panel1",
-        "elements": [
-         {
-          "type": "html",
-          "name": "question1",
-          "html": "<ul>\n<li>Your personal information</li>\n<li>Your children's information</li>\n<li>Your family's income</li>\n</ul>"
-         }
-        ],
-        "title": "We will ask you about",
-        "state": "collapsed"
-       },
-       {
-        "type": "panel",
-        "name": "panel2",
-        "elements": [
-         {
-          "type": "html",
-          "name": "question2",
-          "html": "<p>At the end of this application, you will be asked to add documents that verify your identity and date of birth, proof of US residence, and total household income. For household income, you will need to submit documentation for any income earning adult in your household.</p>\n<p>You can use your phone to take photos of paper documents or select a file from your device.</p>\n<p>You can always return to our homepage to add documents later, too.</p>"
-         }
-        ],
-        "title": "Adding documents",
-        "state": "collapsed"
-       },
-       {
-        "type": "html",
-        "name": "question3",
-        "html": "<div>\n<i class=\"icon-lock_outline\"></i>\n<span>Your information is secure and will be handled in accordance with our <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://sebt.codeforamerica.app/privacy\">privacy policy</a>.</span>\n</div>"
+        "name": "applicationSteps",
+        "html": "<div><span><svg width='100' height='75' id=\"svg-icon-prepareToApply\"><use href=\"#icon-prepareToApply\"></span><br><h4>Application steps</h4>This application should take about <b>15 minutes</b> to complete.</div><div class=\"box\"><b>Steps</b><br><ol><li>Student information</li><li>Household information</li><li>Income and employment</li><li>Contact information</li></ol></div>"
        }
-      ],
-      "title": {
-        "default": "How this works",
-        "es": "¿Cómo funciona esto?"
-      }
+      ]
      },
      {
       "name": "languagePage",

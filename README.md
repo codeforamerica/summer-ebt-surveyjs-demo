@@ -36,6 +36,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 1. PDF Output using SurveyJS PDF Generator (DONE)
 1. Multi language support (DONE)
 1. Input masking (DONE)
+1. Custom icons (DONE)
+1. Deploy app to AWS (S3 bucket)
 1. Document upload to S3
 1. Address validation
 1. USWDS styling
