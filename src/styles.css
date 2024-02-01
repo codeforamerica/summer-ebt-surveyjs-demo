@@ -1,8 +1,238 @@
-/* You can add global styles to this file, and also import other style files */
 body {
-    background-color: #F3F3F3
-  }
+  background-color: #f3f3f3;
+  margin: 0;
+}
+.box {
+  border: 2px solid #b5b5b5;
+  text-align: center;
+  padding: 0.5rem;
+  margin-top: 2rem;
+  border-radius: 4px;
+}
+.box ol {
+  display: block;
+  list-style-position: inside;
+  text-align: left;
+  width: 20rem;
+  letter-spacing: 0.25px;
+  justify-content: left;
+}
+.box li {
+  padding-right: 4rem !important;
+}
+#svg-icon-prepareToApply {
+  margin-top: 4rem;
+}
+.sd-body__page {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  margin: 20px auto;
+}
+.sd-page__title {
+  font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 27px;
+  font-weight: 700 !important;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-decoration: none solid rgb(0, 0, 0);
+  text-align: start;
+  text-indent: 0px;
+  align-items: space-around;
+  padding: 2rem;
+  margin-top: 4rem !important;
+}
+span {
+  font-weight: bold;
+}
+.sv-string-viewer {
+  color: #000000;
+  background-color: rgba(0, 0, 0, 0);
+  font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  vertical-align: baseline;
+  letter-spacing: normal;
+  word-spacing: 0px;
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-decoration: none solid rgb(0, 0, 0);
+  text-align: start;
+  text-indent: 0px;
+  margin-bottom: 4px !important;
+}
+.sd-question--html {
+  background-color: #fff;
+  padding: 0px;
+  margin-bottom: 0px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-decoration: none;
+  text-align: start;
+  text-indent: 0px;
+}
+.sd-html {
+  padding: 1rem;
+}
+ul {
+  line-height: 39px;
+}
+.sd-element--complex.sd-element--with-frame
+  > .sd-element__header--location-top:after {
+  bottom: 0 !important;
+}
+.sd-element__header--location-top {
+  padding-top: 0.6rem !important;
+}
+.sd-element--complex.sd-element--with-frame > .sd-element__header {
+  padding-bottom: 4px !important;
+}
+.sd-question__content {
+  margin-bottom: 10px;
+  color: #5f5854;
+  background-color: rgba(0, 0, 0, 0);
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  vertical-align: baseline;
+  letter-spacing: normal;
+  word-spacing: 0px;
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-decoration: none;
+  text-align: start;
+  text-indent: 0px;
+}
+.select-dropdown {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.toggle-option {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.toggle-option label {
+  flex-grow: 1;
+}
+.toggle-option input[type="radio"] {
+  margin-left: 10px;
+}
+.sd-action-bar {
+  display: flex;
+  justify-content: center;
+}
+.sd-btn,
+.sd-navigation__next-btn {
+  background-color: rgb(1, 128, 96) !important;
+  color: #ffffff !important;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative !important;
+  margin: auto !important;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 19px;
+  line-height: 25px;
+  vertical-align: baseline;
+  letter-spacing: normal;
+  word-spacing: 0px;
+  font-weight: 700;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-decoration: none solid rgb(255, 255, 255);
+  text-align: center;
+  text-indent: 0px;
+}
+.sd-btn:hover,
+.sd-navigation__next-btn:hover {
+  background-color: #0056b3;
+}
+.sd-panel {
+  background-color: #f7f5f4 !important;
+  border: 2px solid #cfc5bf;
+}
+.sd-panel:active {
+  border: 2px solid #ff7f00 !important;
+}
+.sd-btn:active,
+.sd-navigation__next-btn:active {
+  border: 2px solid #ff7f00 !important;
+}
+.sd-question {
+  color: #000000;
+  background-color: white;
+  font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  line-height: 25px;
+  vertical-align: baseline;
+  letter-spacing: normal;
+  word-spacing: 0px;
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-decoration: none solid rgb(0, 0, 0);
+  text-align: start;
+  text-indent: 0px;
+}
+.sd-row.sd-page__row:not(.sd-row--compact) {
+  padding: 0rem;
+}
+.sd-page__row {
+  width: 95% !important;
+  margin: auto;
+}
+#sq_103,
+#sq_101 {
+  background-color: white;
+  padding: 3rem;
+}
+#sq_100 {
+  border: none;
+  background-color: white;
+  padding-bottom: 6rem;
+}
+.sd-element__title--expandable.sd-element__title--expandable {
+  padding-bottom: 4px;
+}
+.sd-body.sd-body--responsive .sd-body__navigation {
+  margin-top: -8rem;
+}
 
-  .box{
-    border: 1px solid black;
-    }
+#svg-icon-documentAndEnvelope {
+  text-align: center;
+}
+#test > span {
+  display: flex;
+  justify-content: center;
+}
+#sq_101 {
+  height: 42rem !important;
+}
+@media (max-width: 768px) {
+  .sd-body__page {
+    padding: 10px;
+    max-width: 100%;
+  }
+}

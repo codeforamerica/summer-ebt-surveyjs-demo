@@ -1,0 +1,71 @@
+.button {
+  color: white;
+  margin-right: 10px;
+}
+.example {
+  background-color: #d13e00;
+  color: white;
+}
+.logo {
+  margin-left: 10px;
+  margin-right: 100px;
+}
+.menu-item {
+  margin-right: 10px;
+}
+.footer {
+  background-color: #02284d;
+  color: white;
+  padding: 20px 10px;
+  display: flex;
+  justify-content: left !important;
+  flex-wrap: wrap;
+}
+.footer-content p {
+  max-width: 600px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  text-align: left;
+}
+.footer-links {
+  list-style-type: none;
+
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.footer-links[_ngcontent-ng-c2042118009] {
+  margin-top: 10px;
+  align-items: start;
+}
+.footer-content[_ngcontent-ng-c2042118009] {
+  align-items: start;
+}
+.footer-links li {
+  margin: 5px 0;
+}
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-links a:hover {
+  text-decoration: underline;
+}
+.footer .logo {
+  height: 25px;
+}
+@media (max-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-links {
+    margin-top: 10px;
+    align-items: center;
+  }
+}
