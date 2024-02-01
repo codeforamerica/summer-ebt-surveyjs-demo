@@ -37,14 +37,14 @@ function doMarkdown(survey: any, options: any) {
   str = str.substring(0, str.length - 4);
   // set html
   options.html = str;
-};
+}
 
 @Component({
   selector: 'app-survey',
   standalone: true,
   imports: [SurveyModule, HeaderComponent, FooterComponent],
   templateUrl: './survey.component.html',
-  styleUrl: './survey.component.css'
+  styleUrl: './survey.component.css',
 })
 export class SurveyComponent {
   @Input() locale!: string;
@@ -64,7 +64,7 @@ export class SurveyComponent {
 
     surveyPdf.data = sender.data;
     surveyPdf.save();
-  };
+  }
 
   doMarkdown(survey: any, options: any) {
     var str = converter.makeHtml(options.text);
@@ -73,7 +73,7 @@ export class SurveyComponent {
     str = str.substring(0, str.length - 4);
     // set html
     options.html = str;
-  };
+  }
 
   ngOnInit() {
     const survey = new SurveyCore.Model(surveyJson);
@@ -83,9 +83,6 @@ export class SurveyComponent {
 
     const theme: SurveyCore.ITheme = themeJson as SurveyCore.ITheme;
     survey.applyTheme(theme);
-
-
-
 
     survey.onComplete.add(this.savePdf);
 
@@ -97,9 +94,9 @@ export class SurveyComponent {
     this.surveyModel.locale = this.locale;
     console.log('ngOnChanges: locale=' + this.surveyModel.locale);
   }
-  }
+}
 
-  /*
+/*
   uploadFiles(_: any, options: { files: any[]; }) {
       const formData = new FormData();
       options.files.forEach((file) => {
@@ -127,4 +124,3 @@ export class SurveyComponent {
                 });
   }
 */
-}

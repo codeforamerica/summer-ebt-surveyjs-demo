@@ -16,6 +16,9 @@ body {
 .box li {
   padding-left: 2rem;
 }
+#svg-icon-prepareToApply {
+  margin-top: 4rem;
+}
 .sd-body__page {
   background-color: white;
   border-radius: 8px;
@@ -203,9 +206,13 @@ ul {
 #sq_100 {
   border: none;
   background-color: white;
+  padding-bottom: 6rem;
 }
 .sd-element__title--expandable.sd-element__title--expandable {
   padding-bottom: 4px;
+}
+.sd-body.sd-body--responsive .sd-body__navigation {
+  margin-top: -8rem;
 }
 @media (max-width: 768px) {
   .sd-body__page {
