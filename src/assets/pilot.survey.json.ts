@@ -23,6 +23,58 @@ export const surveyJson = {
       ],
     },
     {
+      name: 'schoolAttendancePage',
+      elements: [
+        {
+          type: 'html',
+          name: 'schoolAttendanceHtml',
+          html: '<div><span><svg width=\'100\' height=\'75\' id="svg-icon-school"><use href="#icon-school"></span><br><h4>School attendance</h4></div>',
+        },
+        {
+          type: 'dropdown',
+          name: 'schoolAttendance',
+          title: 'In what state, territory, or tribal nation does the student attend school?',
+          description:
+            'During the 2023-2024 year',
+          hideNumber: true,
+          choices: [
+            {
+              value: 'AL',
+              text: 'Alabama',
+            },
+            {
+              value: 'AK',
+              text: 'Alaska',
+            },            {
+              value: 'AS',
+              text: 'American Samoa',
+            },            {
+              value: 'AZ',
+              text: 'Arizona',
+            },            {
+              value: 'AR',
+              text: 'Arkansas',
+            },            {
+              value: 'CA',
+              text: 'California',
+            },            {
+              value: 'Cherokee',
+              text: 'Cherokee Nation',
+            },            {
+              value: 'Chickaswa',
+              text: 'Chickaswa Nation',
+            },            {
+              value: 'CO',
+              text: 'Colorado',
+            },            {
+              value: 'CT',
+              text: 'Connecticut',
+            }
+          ],
+        }
+      ],
+    },
+    {
       name: 'languagePage',
       elements: [
         {
