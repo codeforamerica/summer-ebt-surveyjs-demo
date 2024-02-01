@@ -10,12 +10,15 @@ body {
   border-radius: 4px;
 }
 .box ol {
+  display: block;
   list-style-position: inside;
   text-align: left;
+  width: 20rem;
   letter-spacing: 0.25px;
+  justify-content: left;
 }
 .box li {
-  padding-left: 2rem;
+  padding-right: 4rem !important;
 }
 #svg-icon-prepareToApply {
   margin-top: 4rem;
@@ -177,7 +180,7 @@ ul {
 }
 .sd-question {
   color: #000000;
-  background-color: #f7f5f4;
+  background-color: white;
   font-family: -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu,
     Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: 16px;
@@ -200,7 +203,8 @@ ul {
   width: 95% !important;
   margin: auto;
 }
-#sq_103 {
+#sq_103,
+#sq_101 {
   background-color: white;
   padding: 3rem;
 }
@@ -214,6 +218,17 @@ ul {
 }
 .sd-body.sd-body--responsive .sd-body__navigation {
   margin-top: -8rem;
+}
+
+#svg-icon-documentAndEnvelope {
+  text-align: center;
+}
+#test > span {
+  display: flex;
+  justify-content: center;
+}
+#sq_101 {
+  height: 42rem !important;
 }
 @media (max-width: 768px) {
   .sd-body__page {

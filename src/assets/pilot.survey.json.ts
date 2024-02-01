@@ -18,7 +18,7 @@ export const surveyJson = {
         {
           type: 'html',
           name: 'studentInfoSteps',
-          html: "<div><span><svg width='100' height='75' id=\"svg-icon-documentAndEnvelope\"><use href=\"#icon-documentAndEnvelope\"></span><br>Step 1 of 4<br><h4>Student information</h4>Next, let's add the student(s) who you're applying for.</div><div class=\"box\"><b>We'll ask about</b><br><ol><li>Student information</li><li>School enrollment</li></ol></div>",
+          html: '<div id="test"><span><svg width=\'100\' height=\'75\' id="svg-icon-documentAndEnvelope"><use href="#icon-documentAndEnvelope"></span><br>Step 1 of 4<br><h4>Student information</h4>Next, let\'s add the student(s) who you\'re applying for.</div><div class="box"><b>We\'ll ask about</b><br><ol><li>Student information</li><li>School enrollment</li></ol></div>',
         },
       ],
     },
