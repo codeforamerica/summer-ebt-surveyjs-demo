@@ -230,6 +230,11 @@ ul {
 #sq_101 {
   height: 42rem !important;
 }
+
+#sp_102 > div.sd-body__page.sd-page.sd-page__empty-header {
+  padding-bottom: 17rem;
+  height: 64rem !important;
+}
 @media (max-width: 768px) {
   .sd-body__page {
     padding: 10px;
