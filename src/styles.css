@@ -3,10 +3,11 @@ body {
   margin: 0;
 }
 .box {
-  border: 1px solid black;
+  border: 2px solid #b5b5b5;
   text-align: center;
   padding: 0.5rem;
   margin-top: 2rem;
+  border-radius: 4px;
 }
 .box ol {
   list-style-position: inside;
@@ -136,7 +137,7 @@ ul {
 }
 .sd-btn,
 .sd-navigation__next-btn {
-  background-color: #00223d !important;
+  background-color: rgb(1, 128, 96) !important;
   color: #ffffff !important;
   padding: 10px 20px;
   border: none;
