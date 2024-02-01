@@ -235,6 +235,22 @@ ul {
   padding-bottom: 17rem;
   height: 64rem !important;
 }
+#sp_103 > div.sd-body__page.sd-page.sd-page__empty-header {
+  height: 32rem !important;
+}
+#sp_103 > ol {
+  margin-bottom: 0 !important;
+}
+#sp_104 {
+  background-color: white !important;
+}
+#sp_104_content {
+  padding: 0rem;
+  height: 6rem !important;
+}
+#sp_104 > .box {
+  background-color: white !important;
+}
 @media (max-width: 768px) {
   .sd-body__page {
     padding: 10px;
