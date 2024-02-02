@@ -133,58 +133,34 @@ export const surveyJson = {
               "name": "birthDate",
               "elements": [
                {
-                "type": "dropdown",
+                "type": "text",
                 "name": "birthMonth",
-                "width": "200px",
-                "minWidth": "200px",
-                "maxWidth": "200px",
-                "title": "Month",
-                "titleLocation": "top",
-                "choices": [
-                 {
-                  "value": "01",
-                  "text": "01 - January"
-                 },
-                 {
-                  "value": "02",
-                  "text": "02 - February"
-                 },
-                 {
-                  "value": "03",
-                  "text": "03 - March"
-                 }
-                ],
-                "allowClear": false,
-                "autocomplete": "bday-month"
+                "width": "85px",
+                "minWidth": "85px",
+                "maxWidth": "85px",
                },
                {
                 "type": "text",
                 "name": "birthDay",
-                "width": "110px",
-                "minWidth": "110px",
-                "maxWidth": "110px",
-                "startWithNewLine": false,
-                "title": "Day",
-                "titleLocation": "top",
-                "inputType": "number",
-                "min": 1,
-                "max": 31
+                "width": "90px",
+                "minWidth": "90px",
+                "maxWidth": "90px",
+                "startWithNewLine": false
                },
                {
                 "type": "text",
                 "name": "birthYear",
-                "width": "130px",
-                "minWidth": "130px",
-                "maxWidth": "130px",
-                "startWithNewLine": false,
-                "title": "Year",
-                "titleLocation": "top"
+                "width": "100px",
+                "minWidth": "100px",
+                "maxWidth": "100px",
+                "startWithNewLine": false
                }
               ],
               "title": "When were they born?",
               "description": "Month / Day / Year",
               "questionErrorLocation": "bottom",
-              "width": "auto",
+
+              "minWidth": "550px",
               "maxWidth": "550px",
               "showQuestionNumbers": "off"
              },
