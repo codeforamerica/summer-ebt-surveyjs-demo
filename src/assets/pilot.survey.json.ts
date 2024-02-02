@@ -75,6 +75,234 @@ export const surveyJson = {
       ],
     },
     {
+      "name": "addStudentPage",
+      "elements": [
+       {
+        "type": "html",
+        "name": "addStudentHtml",
+        "html": "<div><span><svg width='100' height='75' id=\"svg-icon-face\"><use href=\"#icon-face\"></span><br><h4>Add a student you're applying for</h4></div>"
+       },
+       {
+        "type": "paneldynamic",
+        "name": "addChildren",
+        "titleLocation": "hidden",
+        "valueName": "household",
+        "templateElements": [
+         {
+          "type": "panel",
+          "name": "householdMemberPanel",
+          "elements": [
+           {
+            "type": "panel",
+            "name": "panel1",
+            "elements": [
+             {
+              "type": "text",
+              "name": "childFirstName",
+              "title": "What's their first name?",
+              "titleLocation": "top",
+              "description": "Legally as it appears on official documents, e.g. birth certificate",
+              "valueName": "firstName"
+             },
+             {
+              "type": "text",
+              "name": "childMiddleName",
+              "title": "What's their middle name?",
+              "titleLocation": "top",
+              "description": "If they have one",
+              "valueName": "middleName"
+             },
+             {
+              "type": "text",
+              "name": "childLastName",
+              "title": "What's their last name?",
+              "titleLocation": "top",
+              "description": "Legally as it appears on official documents, e.g. birth certificate",
+              "valueName": "lastName"
+             },
+             {
+              "type": "expression",
+              "name": "childFullName",
+              "visible": false,
+              "title": "Full Name",
+              "valueName": "fullName",
+              "expression": "{panel.firstName} + ' ' + {panel.lastName}"
+             },
+             {
+              "type": "panel",
+              "name": "birthDate",
+              "elements": [
+               {
+                "type": "dropdown",
+                "name": "birthMonth",
+                "width": "200px",
+                "minWidth": "200px",
+                "maxWidth": "200px",
+                "title": "Month",
+                "titleLocation": "top",
+                "choices": [
+                 {
+                  "value": "01",
+                  "text": "01 - January"
+                 },
+                 {
+                  "value": "02",
+                  "text": "02 - February"
+                 },
+                 {
+                  "value": "03",
+                  "text": "03 - March"
+                 }
+                ],
+                "allowClear": false,
+                "autocomplete": "bday-month"
+               },
+               {
+                "type": "text",
+                "name": "birthDay",
+                "width": "110px",
+                "minWidth": "110px",
+                "maxWidth": "110px",
+                "startWithNewLine": false,
+                "title": "Day",
+                "titleLocation": "top",
+                "inputType": "number",
+                "min": 1,
+                "max": 31
+               },
+               {
+                "type": "text",
+                "name": "birthYear",
+                "width": "130px",
+                "minWidth": "130px",
+                "maxWidth": "130px",
+                "startWithNewLine": false,
+                "title": "Year",
+                "titleLocation": "top"
+               }
+              ],
+              "title": "When were they born?",
+              "description": "Month / Day / Year",
+              "questionErrorLocation": "bottom",
+              "width": "auto",
+              "maxWidth": "550px",
+              "showQuestionNumbers": "off"
+             },
+             {
+              "type": "radiogroup",
+              "name": "isTribalMember",
+              "title": "Is this student a registered member of an Indian Tribal Organization?",
+              "titleLocation": "top",
+              "choices": [
+               {
+                "value": "yes",
+                "text": "Yes"
+               },
+               {
+                "value": "no",
+                "text": "No"
+               }
+              ]
+             },
+             {
+              "type": "text",
+              "name": "ssn",
+              "title": "Social Security Number (SSN) of this student",
+              "titleLocation": "top",
+              "description": "Optional. An SSN is not required to receive Summer EBT benefits."
+             }
+            ],
+            "title": "Name, Birthdate, Tribal Organization, & Social Security Info",
+            "state": "expanded"
+           },
+           {
+            "type": "panel",
+            "name": "homeSituationPanel",
+            "elements": [
+             {
+              "type": "checkbox",
+              "name": "question1",
+              "title": "Do any of the following apply to {panel.firstName}?",
+              "titleLocation": "top",
+              "description": "Check all that apply.They may be more likely to be eligible for Summer EBT.",
+              "choices": [
+               {
+                "value": "fosterCare",
+                "text": "In foster care"
+               },
+               {
+                "value": "unhoused",
+                "text": "Unhoused/homeless"
+               },
+               {
+                "value": "migrant",
+                "text": "Child of migrant worker"
+               },
+               {
+                "value": "runaway",
+                "text": "Runaway from home"
+               }
+              ],
+              "showNoneItem": true
+             },
+             {
+              "type": "checkbox",
+              "name": "question2",
+              "title": "What races or ethnicities does {panel.firstName} identify with?",
+              "titleLocation": "top",
+              "description": "Optional. Select all that apply.",
+              "choices": [
+               {
+                "value": "01",
+                "text": "American Indian or Alaska Native"
+               },
+               {
+                "value": "02",
+                "text": "Asian"
+               },
+               {
+                "value": "03",
+                "text": "Black or African American"
+               },
+               {
+                "value": "04",
+                "text": "Hispanic, Latino or Spanish"
+               },
+               {
+                "value": "05",
+                "text": "Middle Eastern or North African"
+               },
+               {
+                "value": "06",
+                "text": "Native Hawaiian or Pacific Islander"
+               },
+               {
+                "value": "07",
+                "text": "White"
+               }
+              ],
+              "showOtherItem": true,
+              "otherText": "Some other race or ethnicity"
+             }
+            ],
+            "title": "Home Situation & Race",
+            "state": "collapsed"
+           }
+          ],
+          "title": "Information about {panel.fullName}"
+         }
+        ],
+        "noEntriesText": "You haven't added any children yet.\nClick the button below to add a new child.",
+        "panelCount": 2,
+        "minPanelCount": 1,
+        "panelsState": "collapsed",
+        "panelAddText": "Add a child",
+        "panelRemoveText": "Remove a child",
+        "templateVisibleIf": "{panelIndex} > 0"
+       }
+      ]
+     },  
+    {
       name: 'languagePage',
       elements: [
         {
@@ -369,65 +597,9 @@ export const surveyJson = {
       title: 'Eligibility',
     },
     {
-      name: 'page3',
+      name: 'addChildrenPage',
       elements: [
-        {
-          type: 'paneldynamic',
-          name: 'addChildren',
-          title: 'Add children',
-          valueName: 'household',
-          isRequired: true,
-          templateElements: [
-            {
-              type: 'text',
-              name: 'childFirstName',
-              title: "What's their first name?",
-              description: 'Legally as it appears on their ID.',
-              valueName: 'firstName',
-            },
-            {
-              type: 'text',
-              name: 'childLastName',
-              title: "What's their last name?",
-              description: 'Legally as it appears on their ID.',
-              valueName: 'lastName',
-            },
-            {
-              type: 'expression',
-              name: 'childFullName',
-              visible: false,
-              valueName: 'fullName',
-              expression: "{panel.firstName} + ' ' + {panel.lastName}",
-            },
-            {
-              type: 'dropdown',
-              name: 'childSchool',
-              title: 'What school do they go to?',
-              choices: [
-                {
-                  value: 'bayside',
-                  text: 'Bayside High School',
-                },
-                {
-                  value: 'carter',
-                  text: 'Carter High School',
-                },
-                {
-                  value: 'downtown',
-                  text: 'Downtown High School',
-                },
-              ],
-            },
-          ],
-          noEntriesText:
-            "You haven't added any children yet.\nClick the button below to add a new child.",
-          panelCount: 2,
-          minPanelCount: 1,
-          panelsState: 'collapsed',
-          panelAddText: 'Add a child',
-          panelRemoveText: 'Remove a child',
-          templateVisibleIf: '{panelIndex} > 0',
-        },
+
       ],
     },
     {
@@ -580,4 +752,6 @@ export const surveyJson = {
   pagePrevText: 'Back',
   pageNextText: 'Continue',
   clearInvisibleValues: 'none',
+  "startSurveyText": "Get started",
+  "firstPageIsStarted": true,
 };
