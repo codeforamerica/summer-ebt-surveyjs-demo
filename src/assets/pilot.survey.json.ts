@@ -132,67 +132,16 @@ export const surveyJson = {
         "type": "panel",
         "name": "birthDatePanel",
         "elements": [
-         {
-          "type": "dropdown",
-          "name": "birthMonth",
-          "width": "155px",
-          "minWidth": "155px",
-          "maxWidth": "155px",
-          "title": "Month",
-          "titleLocation": "hidden",
-          "choices": [
-           {
-            "value": "01",
-            "text": "01 - Jan"
+          {
+            "type": "text",
+            "name": "birthMonth",
+            "width": "80px",
+            "minWidth": "80px",
+            "maxWidth": "80px",
+            "startWithNewLine": false,
+            "title": "Month",
+            "titleLocation": "hidden"
            },
-           {
-            "value": "02",
-            "text": "02 - Feb"
-           },
-           {
-            "value": "03",
-            "text": "03 - Mar"
-           },
-           {
-            "value": "04",
-            "text": "04 - Apr"
-           },
-           {
-            "value": "05",
-            "text": "05 - May"
-           },
-           {
-            "value": "06",
-            "text": "06 - Jun"
-           },
-           {
-            "value": "07",
-            "text": "07 - Jul"
-           },
-           {
-            "value": "08",
-            "text": "08 - Aug"
-           },
-           {
-            "value": "09",
-            "text": "09 - Sep"
-           },
-           {
-            "value": "10",
-            "text": "10 - Oct"
-           },
-           {
-            "value": "11",
-            "text": "11 - Nov"
-           },
-           {
-            "value": "12",
-            "text": "12 - Dec"
-           }
-          ],
-          "allowClear": false,
-          "autocomplete": "bday-month"
-         },
          {
           "type": "text",
           "name": "birthDay",
