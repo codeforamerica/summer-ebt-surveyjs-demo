@@ -37,11 +37,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 1. Multi language support (DONE)
 1. Input masking (DONE)
 1. Custom icons (DONE)
+1. CfA Styling (IN PROGRESS)
 1. Autocomplete (IN PROGRESS)
+1. Address validation
 1. Deploy app to AWS (S3 bucket)
 1. Document upload to S3
-1. Address validation
-1. USWDS styling
-1. Add multi language content
 1. Accessibility testing
+1. Add multi language content
 1. Server side rendering (requires back end server - assumes node.js)

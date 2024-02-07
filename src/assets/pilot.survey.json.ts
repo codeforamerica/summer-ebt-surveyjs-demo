@@ -232,9 +232,9 @@ export const surveyJson = {
       "noEntriesText": "You haven't added any children yet.\nClick the button below to add a new child.",
       "allowAddPanel": false,
       "allowRemovePanel": false,
-      "panelCount": 1,
-      "minPanelCount": 1,
-      "panelsState": "firstExpanded",
+      "panelCount": 2,
+      "isSingleItemEditMode": true,
+      "startItemIndex": "2",
       "panelAddText": "Add a child",
       "panelRemoveText": "Remove a child"
      }
@@ -280,7 +280,9 @@ export const surveyJson = {
        }
       ],
       "allowAddPanel": false,
-      "allowRemovePanel": false
+      "allowRemovePanel": false,
+      "isSingleItemEditMode": true,
+      "startItemIndex": "2",
      }
     ]
    },
@@ -343,7 +345,9 @@ export const surveyJson = {
        }
       ],
       "allowAddPanel": false,
-      "allowRemovePanel": false
+      "allowRemovePanel": false,
+      "isSingleItemEditMode": true,
+      "startItemIndex": "2"
      }
     ]
    },
@@ -364,7 +368,7 @@ export const surveyJson = {
        {
         "type": "text",
         "name": "schoolDistrict",
-        "title": "In what school district does Ash attend school?",
+        "title": "In what school district does {panel.firstName} attend school?",
         "titleLocation": "top",
         "choices": [ "Ophamer", "Opera", "Saint Poppy", "Penelope" ]
        },
@@ -376,15 +380,87 @@ export const surveyJson = {
        },
        {
         "type": "text",
-        "name": "schoolId",
+        "name": "studentId",
         "title": "Student ID number for {panel.firstName}",
         "description": "If the school provides one. If not, leave this field blank.",
         "titleLocation": "top"
        }
       ],
       "allowAddPanel": false,
-      "allowRemovePanel": false
+      "allowRemovePanel": false,
+      "isSingleItemEditMode": true,
+      "startItemIndex": "2"
      }
+    ]
+   },
+   {
+    "name": "reviewStudentsPage",
+    "titleLocation": "hidden",
+    "elements": [
+      {
+        "type": "html",
+        "name": "reviewStudentsPageHeader",
+        "html": "<div><span><svg width='100' height='75' id=\"svg-icon-docWithMagnifyingGlass\"><use href=\"#icon-docWithMagnifyingGlass\"></span><br><h4>Are these all the students in the household applying for Summer EBT?</h4><br>Add any K-12 students who are in the same household.</div>"
+       },
+      {
+        "type": "paneldynamic",
+        "name": "reviewStudents",
+        "title": "Review students",
+        "valueName": "household",
+        "goToPageOnAddorEdit": "addStudentPage",
+        "isFirstItemHidden": true,
+        "hasEditAction": true, 
+        "templateElements": [
+         {
+          "type": "text",
+          "name": "reviewFirstName",
+          "width": "50%",
+          "title": "First Name",
+          "valueName": "firstName"
+         },
+         {
+          "type": "text",
+          "name": "reviewLastName",
+          "width": "50%",
+          "startWithNewLine": false,
+          "title": "Last Name",
+          "valueName": "lastName"
+         },
+         {
+          "type": "text",
+          "name": "reviewSchoolDistrict",
+          "width": "33%",
+          "title": "District",
+          "valueName": "schoolDistrict"
+         },
+         {
+          "type": "text",
+          "name": "reviewSchoolName",
+          "width": "33%",
+          "startWithNewLine": false,
+          "title": "School",
+          "valueName": "schoolName"
+         },
+         {
+          "type": "text",
+          "name": "reviewStudentId",
+          "width": "33%",
+          "startWithNewLine": false,
+          "title": "ID",
+          "valueName": "studentId"
+         },
+         {
+          "type": "boolean",
+          "renderAs": "checkbox",
+          "name": "edit",
+          "startWithNewLine": false,
+          "title": "Edit"
+       }
+        ],
+        "allowRemovePanel": true,
+        "panelAddText": "Add a student",
+        "panelRemoveText": "delete"
+       }
     ]
    }
   ],
