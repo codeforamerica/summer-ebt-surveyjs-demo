@@ -8,7 +8,10 @@ export const surveyJson = {
      {
       "type": "html",
       "name": "applicationSteps",
-      "html": "<div><span><svg width='100' height='75' id=\"svg-icon-prepareToApply\"><use href=\"#icon-prepareToApply\"></span><br><h4>Application steps</h4>This application should take about <b>15 minutes</b> to complete.</div><div class=\"box\"><b>Steps</b><br><ol><li>Student information</li><li>Household information</li><li>Income and employment</li><li>Contact information</li></ol></div>"
+      "html": {
+       "default": "<div><span><svg width='100' height='75' id=\"svg-icon-prepareToApply\"><use href=\"#icon-prepareToApply\"></span><br><h4>Application steps</h4>This application should take about <b>15 minutes</b> to complete.</div><div class=\"box\"><b>Steps</b><br><ol><li>Student information</li><li>Household information</li><li>Income and employment</li><li>Contact information</li></ol></div>",
+       "es": "<div><span><svg width='100' height='75' id=\"svg-icon-prepareToApply\"><use href=\"#icon-prepareToApply\"></span><br><h4>Pasos de la solicitud</h4>Esta aplicación debería tardar aproximadamente <b>15 minutos </b> completar.</div><div class=\"box\"><b>Steps</b><br><ol><li>Student information</li><li>Household information</li><li>Income and employment</li><li>Contact information</li></ol></div>"
+      }
      }
     ]
    },
@@ -94,6 +97,8 @@ export const surveyJson = {
       "name": "addStudentPanel",
       "titleLocation": "hidden",
       "valueName": "household",
+      "startItemIndex": 2,
+      "isSingleItemEditMode": true,
       "templateElements": [
        {
         "type": "text",
@@ -129,25 +134,25 @@ export const surveyJson = {
         "expression": "{panel.firstName} + ' ' + {panel.lastName}"
        },
        {
-        "type": "panel",
-        "name": "birthDatePanel",
-        "elements": [
-          {
-            "type": "text",
-            "name": "birthMonth",
-            "width": "80px",
-            "minWidth": "80px",
-            "maxWidth": "80px",
-            "startWithNewLine": false,
-            "title": "Month",
-            "titleLocation": "hidden"
-           },
+          "type": "html",
+          "name": "question1",
+          "html": "<b>When were they born?</b><br>Month / Day / Year"
+         },
+         {
+          "type": "text",
+          "name": "birthMonth",
+          "width": "75px",
+          "minWidth": "75px",
+          "maxWidth": "75px",
+          "title": "Month",
+          "titleLocation": "hidden"
+         },
          {
           "type": "text",
           "name": "birthDay",
-          "width": "80px",
-          "minWidth": "80px",
-          "maxWidth": "80px",
+          "width": "75px",
+          "minWidth": "75px",
+          "maxWidth": "75px",
           "startWithNewLine": false,
           "title": "Day",
           "titleLocation": "hidden"
@@ -161,14 +166,22 @@ export const surveyJson = {
           "startWithNewLine": false,
           "title": "Year",
           "titleLocation": "hidden"
+         },
+            {
+        "type": "radiogroup",
+        "name": "isTribalMember",
+        "title": "Is this student a registered member of an Indian Tribal Organization?",
+        "titleLocation": "top",
+        "choices": [
+         {
+          "value": "yes",
+          "text": "Yes"
+         },
+         {
+          "value": "no",
+          "text": "No"
          }
-        ],
-        "title": "When were they born?",
-        "description": "Month / Day / Year",
-        "questionErrorLocation": "bottom",
-        "width": "auto",
-        "maxWidth": "550px",
-        "showQuestionNumbers": "off"
+        ]
        },
        {
         "type": "text",
@@ -182,8 +195,6 @@ export const surveyJson = {
       "allowAddPanel": false,
       "allowRemovePanel": false,
       "panelCount": 2,
-      "isSingleItemEditMode": true,
-      "startItemIndex": "2",
       "panelAddText": "Add a child",
       "panelRemoveText": "Remove a child"
      }
@@ -197,6 +208,8 @@ export const surveyJson = {
       "name": "catElCheckPanel",
       "titleLocation": "hidden",
       "valueName": "household",
+      "startItemIndex": 2,
+      "isSingleItemEditMode": true,
       "templateElements": [
        {
         "type": "html",
@@ -225,13 +238,12 @@ export const surveyJson = {
           "text": "Runaway from home"
          }
         ],
-        "showNoneItem": true
+        "showNoneItem": true,
+        "noneText": "None of the above"
        }
       ],
       "allowAddPanel": false,
-      "allowRemovePanel": false,
-      "isSingleItemEditMode": true,
-      "startItemIndex": "2",
+      "allowRemovePanel": false
      }
     ]
    },
@@ -243,6 +255,8 @@ export const surveyJson = {
       "name": "raceAndEthnicityPanel",
       "titleLocation": "hidden",
       "valueName": "household",
+      "startItemIndex": 2,
+      "isSingleItemEditMode": true,
       "templateElements": [
        {
         "type": "html",
@@ -294,9 +308,7 @@ export const surveyJson = {
        }
       ],
       "allowAddPanel": false,
-      "allowRemovePanel": false,
-      "isSingleItemEditMode": true,
-      "startItemIndex": "2"
+      "allowRemovePanel": false
      }
     ]
    },
@@ -308,6 +320,8 @@ export const surveyJson = {
       "name": "schoolInformationPanel",
       "titleLocation": "hidden",
       "valueName": "household",
+      "startItemIndex": 2,
+      "isSingleItemEditMode": true,
       "templateElements": [
        {
         "type": "html",
@@ -315,11 +329,11 @@ export const surveyJson = {
         "html": "<div><span><svg width='100' height='75' id=\"svg-icon-school\"><use href=\"#icon-school\"></span><br><h4>School information for {panel.firstName}</h4></div>"
        },
        {
-        "type": "text",
+        "type": "dropdown",
+        "choices": [ "Ophamer", "Opera", "Saint Poppy", "Penelope" ],
         "name": "schoolDistrict",
         "title": "In what school district does {panel.firstName} attend school?",
-        "titleLocation": "top",
-        "choices": [ "Ophamer", "Opera", "Saint Poppy", "Penelope" ]
+        "titleLocation": "top"
        },
        {
         "type": "text",
@@ -331,85 +345,74 @@ export const surveyJson = {
         "type": "text",
         "name": "studentId",
         "title": "Student ID number for {panel.firstName}",
-        "description": "If the school provides one. If not, leave this field blank.",
-        "titleLocation": "top"
+        "titleLocation": "top",
+        "description": "If the school provides one. If not, leave this field blank."
        }
       ],
       "allowAddPanel": false,
-      "allowRemovePanel": false,
-      "isSingleItemEditMode": true,
-      "startItemIndex": "2"
+      "allowRemovePanel": false
      }
     ]
    },
    {
     "name": "reviewStudentsPage",
-    "titleLocation": "hidden",
     "elements": [
-      {
-        "type": "html",
-        "name": "reviewStudentsPageHeader",
-        "html": "<div><span><svg width='100' height='75' id=\"svg-icon-docWithMagnifyingGlass\"><use href=\"#icon-docWithMagnifyingGlass\"></span><br><h4>Are these all the students in the household applying for Summer EBT?</h4><br>Add any K-12 students who are in the same household.</div>"
+     {
+      "type": "html",
+      "name": "reviewStudentsPageHeader",
+      "html": "<div><span><svg width='100' height='75' id=\"svg-icon-docWithMagnifyingGlass\"><use href=\"#icon-docWithMagnifyingGlass\"></span><br><h4>Are these all the students in the household applying for Summer EBT?</h4><br>Add any K-12 students who are in the same household.</div>"
+     },
+     {
+      "type": "paneldynamic",
+      "name": "reviewStudents",
+      "title": "Review students",
+      "valueName": "household",
+      "isFirstItemHidden": true,
+      "goToPageOnAddorEdit": "addStudentPage",
+      "hasEditAction": true,
+      "templateElements": [
+       {
+        "type": "text",
+        "name": "reviewFirstName",
+        "width": "50%",
+        "title": "First Name",
+        "valueName": "firstName"
        },
-      {
-        "type": "paneldynamic",
-        "name": "reviewStudents",
-        "title": "Review students",
-        "valueName": "household",
-        "goToPageOnAddorEdit": "addStudentPage",
-        "isFirstItemHidden": true,
-        "hasEditAction": true, 
-        "templateElements": [
-         {
-          "type": "text",
-          "name": "reviewFirstName",
-          "width": "50%",
-          "title": "First Name",
-          "valueName": "firstName"
-         },
-         {
-          "type": "text",
-          "name": "reviewLastName",
-          "width": "50%",
-          "startWithNewLine": false,
-          "title": "Last Name",
-          "valueName": "lastName"
-         },
-         {
-          "type": "text",
-          "name": "reviewSchoolDistrict",
-          "width": "33%",
-          "title": "District",
-          "valueName": "schoolDistrict"
-         },
-         {
-          "type": "text",
-          "name": "reviewSchoolName",
-          "width": "33%",
-          "startWithNewLine": false,
-          "title": "School",
-          "valueName": "schoolName"
-         },
-         {
-          "type": "text",
-          "name": "reviewStudentId",
-          "width": "33%",
-          "startWithNewLine": false,
-          "title": "ID",
-          "valueName": "studentId"
-         },
-         {
-          "type": "boolean",
-          "renderAs": "checkbox",
-          "name": "edit",
-          "startWithNewLine": false,
-          "title": "Edit"
+       {
+        "type": "text",
+        "name": "reviewLastName",
+        "width": "50%",
+        "startWithNewLine": false,
+        "title": "Last Name",
+        "valueName": "lastName"
+       },
+       {
+        "type": "text",
+        "name": "reviewSchoolDistrict",
+        "width": "33%",
+        "title": "District",
+        "valueName": "schoolDistrict"
+       },
+       {
+        "type": "text",
+        "name": "reviewSchoolName",
+        "width": "33%",
+        "startWithNewLine": false,
+        "title": "School",
+        "valueName": "schoolName"
+       },
+       {
+        "type": "text",
+        "name": "reviewStudentId",
+        "width": "33%",
+        "startWithNewLine": false,
+        "title": "ID",
+        "valueName": "studentId"
        }
-        ],
-        "allowRemovePanel": true,
-        "panelAddText": "Add a student",
-        "panelRemoveText": "delete"
-       }
+      ],
+      "panelAddText": "Add a student",
+      "panelRemoveText": "delete"
+     }
     ]
    }
   ],
