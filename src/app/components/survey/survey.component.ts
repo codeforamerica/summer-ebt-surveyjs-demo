@@ -78,8 +78,10 @@ export class SurveyComponent {
 
     this.surveyModel = survey;
 
-    mixpanel.init(environment.mixpanelToken,
-      { debug: true, track_pageview: true, persistence: 'localStorage' });
+    if (environment.useMixpanel) {
+      mixpanel.init(environment.mixpanelToken,
+        { debug: true, track_pageview: true, persistence: 'localStorage' });
+    }
   }
 
   ngOnChanges() {
@@ -129,9 +131,11 @@ export class SurveyComponent {
   }
 
   onCurrentPageChanged(sender: SurveyCore.Model, options: SurveyCore.CurrentPageChangedEvent) {
-    mixpanel.track('page_load', {
-      'page_name': options.newCurrentPage.name
-    });
+    if (environment.useMixpanel) {
+      mixpanel.track('page_load', {
+        'page_name': options.newCurrentPage.name
+      });
+    }
   }
 
   static setVisibleDynamicPanel(panel: SurveyCore.QuestionPanelDynamicModel, index: number) {
