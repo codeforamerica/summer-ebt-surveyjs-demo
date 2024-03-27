@@ -1,0 +1,9 @@
+# Secret environment variables should be defined in this file.
+#
+# To use this file in your local setup, make a copy of it in this same directory named
+# environment.ts for prod and another named environment.development.ts for dev and fill them in
+# with the secret values.
+
+export const environment = {
+    mixpanelToken: '',
+};

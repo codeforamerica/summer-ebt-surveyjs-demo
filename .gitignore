@@ -42,3 +42,6 @@ testem.log
 .DS_Store
 Thumbs.db
 *.code-workspace
+
+# Environment variables
+/src/environments/*.ts
