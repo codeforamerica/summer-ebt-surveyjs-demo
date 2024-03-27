@@ -17,6 +17,12 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
+## Third-party integrations
+
+This project supports using Mixpanel for analytics. Using Mixpanel is optional and can be configured
+with the `useMixpanel` environment variable, which is a boolean. If you do decide to use Mixpanel, you
+should create a new Mixpanel project. In the Mixpanel console, go to on Settings > Project Settings
+and retrieve the project token. You should add this token in the `mixpanelToken` variable and set `useMixpanel` to true. Different Mixpanel projects should be created for production and development.
 
 ## Running unit tests
 
