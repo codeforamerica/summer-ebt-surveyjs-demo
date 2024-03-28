@@ -5,13 +5,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Build
 
-Run 'npm install' to load the package dependencies.
+Run `npm install` to load the package dependencies.
 
 Then run `ng build` to build the project. 
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. Set up local environment variables. Run `cp src/environments/environment.template src/environments/environment.ts` and `cp src/environments/environment.template src/environments/environment.development.ts`. If you don't want to use Mixpanel for analytics, there is nothing else you need to do since it's disabled by default. If you want to configure Mixpanel, read the [Third-party integrations section](#third-party-integrations).
+2. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -21,8 +22,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 This project supports using Mixpanel for analytics. Using Mixpanel is optional and can be configured
 with the `useMixpanel` environment variable, which is a boolean. If you do decide to use Mixpanel, you
-should create a new Mixpanel project. In the Mixpanel console, go to on Settings > Project Settings
-and retrieve the project token. You should add this token in the `mixpanelToken` variable and set `useMixpanel` to true. Different Mixpanel projects should be created for production and development.
+should create a new Mixpanel project. In the Mixpanel console, go to Settings > Project Settings and retrieve the project token. You should add this token in the `mixpanelToken` variable and set `useMixpanel` to true. Different Mixpanel projects should be created for production and development.
 
 ## Running unit tests
 

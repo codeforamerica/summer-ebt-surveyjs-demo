@@ -5,6 +5,6 @@
 # with the secret values.
 
 export const environment = {
-    useMixpanel: true,
+    useMixpanel: false,
     mixpanelToken: '',
 };
