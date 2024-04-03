@@ -13,6 +13,9 @@ import { FooterComponent } from '../footer/footer.component';
 import 'survey-core/survey.i18n';
 import $ from "jquery";
 import { SvgRegistry, Serializer } from 'survey-core';
+import mixpanel from 'mixpanel-browser';
+import { environment } from './../../../environments/environment';
+
 
 Serializer.addProperty("question", { name: 'startItemIndex',  type: 'number',  category: 'general', } );
 Serializer.addProperty("question", { name: 'isSingleItemEditMode', type: 'boolean', category: 'general', } );
@@ -71,8 +74,14 @@ export class SurveyComponent {
     survey.onDynamicPanelAdded.add(this.onDynamicPanelAdded);
     survey.onDynamicPanelItemValueChanged.add(this.onDynamicPanelItemValueChanged);
     survey.onGetPanelFooterActions.add(this.onGetPanelFooterActions);
+    survey.onCurrentPageChanged.add(this.onCurrentPageChanged);
 
     this.surveyModel = survey;
+
+    if (environment.useMixpanel) {
+      mixpanel.init(environment.mixpanelToken,
+        { debug: true, track_pageview: true, persistence: 'localStorage' });
+    }
   }
 
   ngOnChanges() {
@@ -118,6 +127,14 @@ export class SurveyComponent {
            });
           }
       })
+    }
+  }
+
+  onCurrentPageChanged(sender: SurveyCore.Model, options: SurveyCore.CurrentPageChangedEvent) {
+    if (environment.useMixpanel) {
+      mixpanel.track('page_load', {
+        'page_name': options.newCurrentPage.name
+      });
     }
   }
 
