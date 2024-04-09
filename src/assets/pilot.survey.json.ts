@@ -16,6 +16,21 @@ export const surveyJson = {
     ]
    },
    {
+    "name": "documentUploadPage",
+    "elements": [
+     {
+      "type": "file",
+      "name": "documentUpload",
+      "title": "Please upload your files",
+      "storeDataAsText": true,
+      "waitForUpload": true,
+      "allowMultiple": true,
+      "maxSize": 102400,
+      "hideNumber": true,
+       }
+      ]
+     },
+   {
     "name": "studentInfoStepsPage",
     "elements": [
      {
