@@ -1,3 +1,5 @@
+import { environment } from "../environments/environment";
+
 export const surveyJson = {
   "title": "Summer EBT Demo",
   "logoPosition": "right",
@@ -25,11 +27,10 @@ export const surveyJson = {
       "storeDataAsText": true,
       "waitForUpload": true,
       "allowMultiple": true,
-      "maxSize": 102400,
-      "hideNumber": true,
-       }
-      ]
-     },
+      "maxSize": environment.maxFileSize,
+     }
+    ]
+   },
    {
     "name": "studentInfoStepsPage",
     "elements": [
