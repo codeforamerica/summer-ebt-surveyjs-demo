@@ -78,8 +78,8 @@ export class SurveyComponent {
 
     this.surveyModel = survey;
 
-    if (environment.useMixpanel) {
-      mixpanel.init(environment.mixpanelToken,
+    if (environment.analytics.useMixpanel) {
+      mixpanel.init(environment.analytics.mixpanelToken,
         { debug: true, track_pageview: true, persistence: 'localStorage' });
     }
   }
@@ -131,7 +131,7 @@ export class SurveyComponent {
   }
 
   onCurrentPageChanged(sender: SurveyCore.Model, options: SurveyCore.CurrentPageChangedEvent) {
-    if (environment.useMixpanel) {
+    if (environment.analytics.useMixpanel) {
       mixpanel.track('page_load', {
         'page_name': options.newCurrentPage.name
       });

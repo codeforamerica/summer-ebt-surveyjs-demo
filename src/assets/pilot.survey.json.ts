@@ -1,3 +1,5 @@
+import { environment } from "../environments/environment";
+
 export const surveyJson = {
   "title": "Summer EBT Demo",
   "logoPosition": "right",
@@ -12,6 +14,21 @@ export const surveyJson = {
        "default": "<div><span><svg width='100' height='75' id=\"svg-icon-prepareToApply\"><use href=\"#icon-prepareToApply\"></span><br><h4>Application steps</h4>This application should take about <b>15 minutes</b> to complete.</div><div class=\"box\"><b>Steps</b><br><ol><li>Student information</li><li>Household information</li><li>Income and employment</li><li>Contact information</li></ol></div>",
        "es": "<div><span><svg width='100' height='75' id=\"svg-icon-prepareToApply\"><use href=\"#icon-prepareToApply\"></span><br><h4>Pasos de la solicitud</h4>Esta aplicación debería tardar aproximadamente <b>15 minutos </b> completar.</div><div class=\"box\"><b>Steps</b><br><ol><li>Student information</li><li>Household information</li><li>Income and employment</li><li>Contact information</li></ol></div>"
       }
+     }
+    ]
+   },
+   {
+    "name": "documentUploadPage",
+    "elements": [
+     {
+      "type": "file",
+      "name": "documentUpload",
+      "title": "Please upload your files",
+      "storeDataAsText": true,
+      "waitForUpload": true,
+      "allowMultiple": environment.fileUpload.allowMultipleFileUpload,
+      "maxSize": environment.fileUpload.maxFileSize,
+      "acceptedTypes": environment.fileUpload.acceptedFileTypes,
      }
     ]
    },

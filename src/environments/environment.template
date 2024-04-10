@@ -6,6 +6,15 @@
  * */
 
 export const environment = {
-    useMixpanel: false,
-    mixpanelToken: '',
+    // For 3rd party integrations
+    analytics: {
+      useMixpanel: false,
+      mixpanelToken: '',
+    },
+    fileUpload: {
+      // For file upload
+      maxFileSize: 5000000, // 5MB in bytes
+      acceptedFileTypes: 'image/*,.jpeg,.jpg,.png,.pdf,.bmp,.doc,.docx,.odt,.ods,.odp',
+      allowMultipleFileUpload: true,
+    },
 };
