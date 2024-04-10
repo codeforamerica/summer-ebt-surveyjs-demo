@@ -26,9 +26,9 @@ export const surveyJson = {
       "title": "Please upload your files",
       "storeDataAsText": true,
       "waitForUpload": true,
-      "allowMultiple": environment.allowMultipleFileUpload,
-      "maxSize": environment.maxFileSize,
-      "acceptedTypes": environment.acceptedFileTypes,
+      "allowMultiple": environment.fileUpload.allowMultipleFileUpload,
+      "maxSize": environment.fileUpload.maxFileSize,
+      "acceptedTypes": environment.fileUpload.acceptedFileTypes,
      }
     ]
    },
